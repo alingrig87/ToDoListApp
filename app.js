@@ -17,12 +17,24 @@ function onAddTodo() {
 
 function createListItem(name) {
 	const li = document.createElement('li');
-	li.textContent = name;
+	const title = document.createElement('p');
+	title.textContent = name;
 
+	const deleteButton = document.createElement('button');
+	deleteButton.textContent = 'X';
+	deleteButton.classList.add('delete-button');
+	deleteButton.addEventListener('click', onDeleteTodo);
+
+	li.appendChild(title);
+	li.appendChild(deleteButton);
 	return li;
 }
 
 function clearInput() {
 	input.value = '';
 	addButton.disabled = true;
+}
+
+function onDeleteTodo(e) {
+	e.target.parentElement.remove();
 }
