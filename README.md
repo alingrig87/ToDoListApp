@@ -21,3 +21,4 @@ Steps:
    - create li element containing value from input
    - append li element to list(ul)
    - add styles for li
+   - clear selection from input
